@@ -25,5 +25,14 @@ class ProductManager:
         for product in self.products:
             total += product._quantity * product._price
 
-        return total         
+        return total
+
+    def add_product_removal(self, name):
+        for product in self.products:
+            if name == product._name:
+                self.products.remove(product)
+                print(f'Produsul a fost sters!')
+                return   
+
+        print('Produsul nu exista in lista!')             
 
